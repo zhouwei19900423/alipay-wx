@@ -38,7 +38,7 @@
 	        			${p.price }
 	        		</td>
 	        		<td>
-	        			<a href="<%=request.getContextPath() %>/alipay/goConfirm.action?productId=${p.id }">购买</a>
+	        			<a href="<%=request.getContextPath() %>/alipay/goConfirm?productId=${p.id }">购买</a>
 	        		</td>
 	        	</tr>
 	        	

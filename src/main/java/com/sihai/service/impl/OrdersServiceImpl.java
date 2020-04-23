@@ -2,7 +2,7 @@ package com.sihai.service.impl;
 
 import java.util.Date;
 
-import org.n3r.idworker.Sid;
+import com.org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

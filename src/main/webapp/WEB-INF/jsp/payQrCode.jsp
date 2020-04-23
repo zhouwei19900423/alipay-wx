@@ -43,11 +43,11 @@
 		
 		// 查询是否支付成功 
 		function checkPayResult() {
-			$.get("/wxpay/wxPayIsSuccess.action", function(data) {
+			$.get("/wxpay/wxPayIsSuccess", function(data) {
 // 				debugger;
 				console.log(data);
 				if (data) {
-					window.location.href = "/wxpay/paySuccess.action";
+					window.location.href = "/wxpay/paySuccess";
 				}
 			});
 		}

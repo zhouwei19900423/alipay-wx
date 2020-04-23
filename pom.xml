@@ -5,10 +5,17 @@
 	<artifactId>itzixi-maven-ssm-alipay</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.5.RELEASE</version>
+	</parent>
 	<!-- 只定义依赖的版本，不会实际依赖 -->
 	<dependencies>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 			<!-- 时间操作组件 -->
 			<dependency>
 				<groupId>joda-time</groupId>
@@ -21,67 +28,7 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.3.2</version>
 			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>1.3.2</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-net</groupId>
-				<artifactId>commons-net</artifactId>
-				<version>3.3</version>
-			</dependency>
-			<!-- Jackson Json处理工具包 -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>2.7.4</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>2.7.4</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-annotations</artifactId>
-				<version>2.7.4</version>
-			</dependency>
-			<!-- httpclient -->
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>4.3.5</version>
-			</dependency>
-			<!-- 单元测试 -->
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.12</version>
-				<scope>test</scope>
-			</dependency>
 
-			<!-- Mybatis -->
-			<dependency>
-				<groupId>org.mybatis</groupId>
-				<artifactId>mybatis</artifactId>
-				<version>3.2.8</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mybatis</groupId>
-				<artifactId>mybatis-spring</artifactId>
-				<version>1.2.2</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.miemiedev</groupId>
-				<artifactId>mybatis-paginator</artifactId>
-				<version>1.2.15</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.pagehelper</groupId>
-				<artifactId>pagehelper</artifactId>
-				<version>4.1.3</version>
-			</dependency>
 			<!-- MySql -->
 			<dependency>
 				<groupId>mysql</groupId>
@@ -94,42 +41,6 @@
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid</artifactId>
 				<version>1.1.0</version>
-			</dependency>
-			<!-- Spring -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-beans</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-jdbc</artifactId>
-				<version>4.3.3.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-aspects</artifactId>
-				<version>4.3.3.RELEASE</version>
 			</dependency>
 			<!-- JSP相关 -->
 			<dependency>
@@ -149,137 +60,16 @@
 				<version>2.0</version>
 				<scope>provided</scope>
 			</dependency>
-			<!-- 文件上传组件 -->
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>1.3.1</version>
-			</dependency>
-			<!-- Redis客户端 -->
-			<dependency>
-				<groupId>redis.clients</groupId>
-				<artifactId>jedis</artifactId>
-				<version>2.8.0</version>
-			</dependency>
-			<!-- solr客户端 -->
-			<dependency>
-				<groupId>org.apache.solr</groupId>
-				<artifactId>solr-solrj</artifactId>
-				<version>4.10.3</version>
-			</dependency>
-			<!-- fastDFS -->
-			<dependency>
-				<groupId>org.csource</groupId>
-				<artifactId>fastdfs-client-java</artifactId>
-				<version>1.25</version>
-			</dependency>
-			<!-- freemarker -->
-			<dependency>
-				<groupId>org.freemarker</groupId>
-				<artifactId>freemarker</artifactId>
-				<version>2.3.23</version>
-			</dependency>
-			<!-- quartz -->
-			<dependency>
-				<groupId>org.quartz-scheduler</groupId>
-				<artifactId>quartz</artifactId>
-				<version>2.2.3</version>
-			</dependency>
+			<!--&lt;!&ndash; freemarker &ndash;&gt;-->
+			<!--<dependency>-->
+				<!--<groupId>org.freemarker</groupId>-->
+				<!--<artifactId>freemarker</artifactId>-->
+				<!--<version>2.3.23</version>-->
+			<!--</dependency>-->
 
-			<!-- use hibernate-validator to validate entity before enter controller -->
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-validator</artifactId>
-				<version>5.2.4.Final</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.validation</groupId>
-				<artifactId>validation-api</artifactId>
-				<version>1.1.0.Final</version>
-			</dependency>
 
-			<!-- spring rabbitmq -->
-			<dependency>
-				<groupId>org.springframework.amqp</groupId>
-				<artifactId>spring-rabbit</artifactId>
-				<version>1.5.6.RELEASE</version>
-			</dependency>
 
-			<!-- http://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
-			<dependency>
-				<groupId>commons-httpclient</groupId>
-				<artifactId>commons-httpclient</artifactId>
-				<version>3.1</version>
-			</dependency>
 
-			<!-- 日志处理 -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>1.7.21</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.21</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>17.0</version>
-			</dependency>
-			<dependency>
-				<groupId>com.squareup.okhttp</groupId>
-				<artifactId>mockwebserver</artifactId>
-				<version>1.5.4</version>
-				<scope>test</scope>
-			</dependency>
-
-			<!-- shiro -->
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-core</artifactId>
-				<version>1.3.2</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>slf4j-api</artifactId>
-						<groupId>org.slf4j</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-spring</artifactId>
-				<version>1.3.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-ehcache</artifactId>
-				<version>1.3.2</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>slf4j-api</artifactId>
-						<groupId>org.slf4j</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-			<dependency>
-				<groupId>com.sun.mail</groupId>
-				<artifactId>javax.mail</artifactId>
-				<version>1.5.6</version>
-			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-			<!-- excel reporter -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi</artifactId>
-				<version>3.16</version>
-			</dependency>
-			
 			<!-- alipay sdk -->
 			<!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
 			<dependency>
@@ -287,7 +77,11 @@
 				<artifactId>alipay-sdk-java</artifactId>
 				<version>3.1.0</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>3.1.0</version>
+			</dependency>
 
 		<!-- https://mvnrepository.com/artifact/xmlpull/xmlpull -->
 			<dependency>
@@ -295,7 +89,7 @@
 			    <artifactId>xmlpull</artifactId>
 			    <version>1.1.3.1</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/xpp3/xpp3 -->
 			<dependency>
 			    <groupId>xpp3</groupId>
@@ -330,7 +124,20 @@
 				<artifactId>activation</artifactId>
 				<version>1.1.1</version>
 			</dependency>
-			
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>8.5.34</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -345,7 +152,7 @@
 				</includes>
 				<filtering>false</filtering>
 			</resource>
-			
+
 			<resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -355,55 +162,24 @@
                 <filtering>false</filtering>
             </resource>
 		</resources>
-	
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<configuration>
-					<port>8080</port>
-					<path>/</path>
-				</configuration>
-			</plugin>
-		
-			<!-- 资源文件拷贝插件 -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-resources-plugin</artifactId> -->
-<!-- 				<version>2.7</version> -->
-<!-- 				<configuration> -->
-<!-- 					<encoding>UTF-8</encoding> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
-			<!-- java编译插件 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!-- 配置Tomcat插件 -->
-				<plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat7-maven-plugin</artifactId>
-					<version>2.2</version>
-				</plugin>
 
-				<!-- 配置sts插件 -->
-				<plugin>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<version>2.9</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<finalName>${project.artifactId}</finalName>
+		<!--<pluginManagement>-->
+			<!--<plugins>-->
+				<!--&lt;!&ndash; 配置Tomcat插件 &ndash;&gt;-->
+				<!--<plugin>-->
+					<!--<groupId>org.apache.tomcat.maven</groupId>-->
+					<!--<artifactId>tomcat7-maven-plugin</artifactId>-->
+					<!--<version>2.2</version>-->
+				<!--</plugin>-->
+
+				<!--&lt;!&ndash; 配置sts插件 &ndash;&gt;-->
+				<!--<plugin>-->
+					<!--<artifactId>maven-eclipse-plugin</artifactId>-->
+					<!--<version>2.9</version>-->
+				<!--</plugin>-->
+			<!--</plugins>-->
+		<!--</pluginManagement>-->
 	</build>
 	
 </project>

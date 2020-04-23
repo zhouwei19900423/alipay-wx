@@ -3,8 +3,10 @@ package com.sihai.mapper;
 import com.sihai.pojo.Orders;
 import com.sihai.pojo.OrdersExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface OrdersMapper {
     int countByExample(OrdersExample example);
 

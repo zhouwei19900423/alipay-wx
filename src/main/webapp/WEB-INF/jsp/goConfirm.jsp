@@ -11,7 +11,7 @@
     
     <body>
         
-    <form action="<%=request.getContextPath() %>/alipay/createOrder.action" method="post">
+    <form action="<%=request.getContextPath() %>/alipay/createOrder" method="post">
     	<input type="hidden" id="productId" name="productId" value="${p.id }" />
         <table>
         	<tr>
@@ -56,7 +56,7 @@
 	
 	function createOrder() {
 		$.ajax({
-	    	url: hdnContextPath + "/alipay/createOrder.action",
+	    	url: hdnContextPath + "/alipay/createOrder",
 	    	type: "POST",
 	    	data: {"productId": $("#productId").val(), "buyCounts": $("#buyCounts").val()},
 	    	dataType: "json",
@@ -64,7 +64,7 @@
 	            if(data.status == 200 && data.msg == "OK") {
 	            	debugger;
 	            	// 提交订单成功后, 进入购买页面
-	            	window.location.href = hdnContextPath + "/alipay/goPay.action?orderId=" + data.data;
+	            	window.location.href = hdnContextPath + "/alipay/goPay?orderId=" + data.data;
 	            } else {
 	            	alert(data.msg);
 	            	console.log(JSON.stringify(data));

@@ -8,7 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.n3r.idworker.Sid;
+import com.org.n3r.idworker.Sid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,7 +124,7 @@ public class AlipayController {
 	 */
 	@RequestMapping(value = "/createOrder")
 	@ResponseBody
-	public LeeJSONResult createOrder(Orders order) throws Exception {
+	public ModelAndView createOrder(Orders order) throws Exception {
 
 		Product p = productService.getProductById(order.getProductId());
 
@@ -135,8 +135,8 @@ public class AlipayController {
 		order.setOrderAmount(String.valueOf(Float.valueOf(p.getPrice()) * order.getBuyCounts()));
 		order.setOrderStatus(OrderStatusEnum.WAIT_PAY.key);
 		orderService.saveOrder(order);
-
-		return LeeJSONResult.ok(orderId);
+//		return LeeJSONResult.ok(orderId);
+		return goPay(orderId);
 	}
 
 	/**

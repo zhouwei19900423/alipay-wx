@@ -11,7 +11,7 @@
     
     <body>
         
-    <form id="payForm" action="<%=request.getContextPath() %>/alipay/goAlipay.action" method="post">
+    <form id="payForm" action="<%=request.getContextPath() %>/alipay/goAlipay" method="post">
     	<input type="hidden" name="orderId" value="${order.id }" />
         <table>
         	<tr>
@@ -57,7 +57,7 @@
 		
 		var hdnContextPath = $("#hdnContextPath").val();
 		
-		$("#payForm").attr("action", hdnContextPath + "/wxpay/createPreOrder.action");
+		$("#payForm").attr("action", hdnContextPath + "/wxpay/createPreOrder");
 		$("#payForm").submit();
 	}
 
