@@ -10,9 +10,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.10.247:3306/teacher-platform-face-alipay?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
-    username: hxtech
-    password: hxtech
+    url: jdbc:mysql://xxx:3306/teacher-platform-face-alipay?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: xxx
+    password: xx
     initialSize: 1
     minIdle: 3
     maxActive: 20
